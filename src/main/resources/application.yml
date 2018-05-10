@@ -1,0 +1,13 @@
+spring: 
+  datasource: 
+    url: jdbc:mysql://localhost:3306/learn?characterEncoding=utf8&useSSL=false
+    username: root
+    password: xxxr
+    driver-class-name: com.mysql.jdbc.Driver  
+  jpa: 
+    # 自动创建表的时候使用InnoDB，这样才能支持事务，否则默认使用的是MyISAM类型，无法支持事务
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate.ddl-auto: update 
+  # AopAutoConfiguration里的默认是true，和网上说的不一样
+  aop.proxy-target-class: false
